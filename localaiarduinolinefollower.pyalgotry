@@ -1,0 +1,107 @@
+To build a "self-learning" line follower with 1 GB of data, you need two distinct pieces of code:
+
+1. **Python Script:** To process your 1 GB of training data (images or sensor logs) and "teach" the AI.
+2. **Arduino Sketch:** To run the finished AI model locally on your robot hardware.
+
+### **Part 1: The Local AI Trainer (Python)**
+
+Because 1 GB of data is too large for an Arduino to process, you train the brain on your computer first. This code uses **TensorFlow** to learn how to drive based on your recorded data.
+
+```python
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Flatten, Dropout
+import pandas as pd
+import numpy as np
+
+# 1. Load your 1GB Dataset (Assuming a CSV of 5 IR sensor readings + steering)
+# Use 'chunksize' to handle large data without crashing your RAM
+data_path = "line_follower_data.csv"
+chunk_size = 50000 
+
+model = Sequential([
+    Dense(16, activation='relu', input_shape=(5,)), # 5 IR Sensors
+    Dense(8, activation='relu'),
+    Dropout(0.2),
+    Dense(3, activation='softmax') # Outputs: 0=Left, 1=Straight, 2=Right
+])
+
+model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+
+print("Training Local AI Brain...")
+# Streaming the 1GB data through the model
+for chunk in pd.read_csv(data_path, chunksize=chunk_size):
+    X = chunk.iloc[:, :5].values # Sensors
+    y = chunk.iloc[:, 5].values  # Steering Label
+    model.train_on_batch(X, y)
+
+# 2. Convert to TensorFlow Lite (for Arduino/Microcontroller)
+converter = tf.lite.TFLiteConverter.from_keras_model(model)
+tflite_model = converter.convert()
+
+with open("model.tflite", "wb") as f:
+    f.write(tflite_model)
+print("Self-learning complete. Model saved as model.tflite")
+
+```
+
+---
+
+### **Part 2: The Arduino "Local AI" Controller**
+
+Arduino cannot run raw Python. You must use **TensorFlow Lite for Microcontrollers** or a simplified **Neural Network** library. This code takes the "knowledge" from the Python script and runs it on the robot.
+
+```cpp
+#include <EloquentTinyML.h> // Library to run the model locally
+#include "model_data.h"     // Your exported model converted to a byte array
+
+#define NUMBER_OF_INPUTS 5
+#define NUMBER_OF_OUTPUTS 3
+#define TENSOR_ARENA_SIZE 2*1024
+
+// Initialize the AI Brain on Arduino
+Eloquent::TinyML::TfLite<NUMBER_OF_INPUTS, NUMBER_OF_OUTPUTS, TENSOR_ARENA_SIZE> ml;
+
+// Motor Pins
+const int motorL = 5;
+const int motorR = 6;
+
+void setup() {
+    Serial.begin(9600);
+    ml.begin(model_data); // Load the 1GB-trained knowledge
+}
+
+void loop() {
+    // 1. Read the 5 IR Sensors
+    float inputs[5];
+    for(int i=0; i<5; i++) {
+        inputs[i] = analogRead(A0 + i) / 1023.0; // Normalize data
+    }
+
+    // 2. Local AI Prediction (Inference)
+    int prediction = ml.predict(inputs);
+
+    // 3. Act based on AI decision
+    if (prediction == 1) {      // Straight
+        analogWrite(motorL, 150);
+        analogWrite(motorR, 150);
+    } else if (prediction == 0) { // Left
+        analogWrite(motorL, 50);
+        analogWrite(motorR, 200);
+    } else {                    // Right
+        analogWrite(motorL, 200);
+        analogWrite(motorR, 50);
+    }
+}
+
+```
+
+### **How this works with 1 GB Data**
+
+* **The Problem:** An Arduino Uno only has **2 KB** of RAM. It cannot "learn" from 1 GB of data while driving; it would be like trying to fit an entire library into a sticky note.
+* **The Solution:** The Python code does the heavy lifting (the "Learning"). It compresses that 1 GB of experience into a tiny mathematical file (`model.tflite`).
+* **The Execution:** The Arduino then uses that tiny file to make decisions in milliseconds, making it a "Self-Learning" system that was trained on a massive local dataset.
+
+[How to make a Neural Network for Line Follower Robot](https://www.youtube.com/watch?v=w3bE3ygJMx8)
+
+This video is relevant because it demonstrates the process of developing the logic and code for an advanced line follower, which is a key step before you can implement complex AI models.
