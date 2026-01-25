@@ -1,0 +1,146 @@
+0 HEAD
+1 SUBM @SUBM1@
+1 SOUR Ancestry.com Family Trees
+2 NAME Ancestry.com Member Trees
+2 VERS 2025.08
+2 _TREE science and hari
+3 RIN 204231859
+3 NOTE as/.dkjfl;ak
+3 _ENV prd
+2 CORP Ancestry.com
+3 PHON 801-705-7000
+3 WWW www.ancestry.com
+3 ADDR 1300 West Traverse Parkway
+4 CONT Lehi, UT  84043
+4 CONT USA
+1 DATE 11 Jan 2026
+2 TIME 01:07:57
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 CHAR UTF-8
+0 @SUBM1@ SUBM
+1 NAME Ancestry.com Member Trees Submitter
+0 @I232675652893@ INDI
+1 NAME Dr. Harish  /Ravi/
+2 GIVN Dr. Harish 
+2 SURN Ravi
+1 SEX M
+1 FAMC @F3@
+0 @I232675652894@ INDI
+1 NAME Vasanth /Ravi/
+2 GIVN Vasanth
+2 SURN Ravi
+2 SOUR @S768688064@
+3 _APID 1,2406::9797998
+1 SEX M
+2 SOUR @S768688064@
+3 _APID 1,2406::9797998
+1 FAMC @F1@
+1 FAMS @F3@
+1 _MILT
+2 DATE 1962
+2 SOUR @S768688064@
+3 _APID 1,2406::9797998
+1 CENS
+2 DATE 31 Mar 3164
+2 PLAC Bangalore 
+2 NOTE PhD advisor on time
+1 SOUR @S768688064@
+2 _APID 1,2406::9797998
+1 NOTE Great advisor don't know the inheritance and passing on and stay in touch..
+0 @I232675652895@ INDI
+1 NAME Ramsey Upto Galelio /Ravi/
+2 GIVN Ramsey Upto Galelio
+2 SURN Ravi
+1 SEX M
+1 FAMC @F2@
+1 FAMS @F1@
+0 @I232675652896@ INDI
+1 NAME albert /Galelio newton/
+2 GIVN albert
+2 SURN Galelio newton
+2 SOUR @S768688066@
+3 _APID 1,5758::15474
+2 SOUR @S768688067@
+3 _APID 1,8665::406498
+2 SOUR @S768688065@
+3 _APID 1,8978::1023743
+1 SEX M
+2 SOUR @S768688066@
+3 _APID 1,5758::15474
+2 SOUR @S768688067@
+3 _APID 1,8665::406498
+2 SOUR @S768688065@
+3 _APID 1,8978::1023743
+1 FAMS @F2@
+1 BIRT
+2 PLAC Cotleigh, Devon, England
+2 SOUR @S768688065@
+3 _APID 1,8978::1023743
+1 RESI
+2 DATE 1841
+2 PLAC Honiton, Honiton, Devon, England
+2 SOUR @S768688065@
+3 _APID 1,8978::1023743
+1 PROB
+2 PLAC Delta, Colorado, USA
+2 SOUR @S768688067@
+3 _APID 1,8665::406498
+1 SOUR @S768688066@
+2 _APID 1,5758::15474
+1 SOUR @S768688067@
+2 _APID 1,8665::406498
+1 SOUR @S768688065@
+2 _APID 1,8978::1023743
+0 @F1@ FAM
+1 HUSB @I232675652895@
+1 CHIL @I232675652894@
+0 @F2@ FAM
+1 HUSB @I232675652896@
+1 CHIL @I232675652895@
+0 @F3@ FAM
+1 HUSB @I232675652894@
+1 CHIL @I232675652893@
+0 @S768688064@ SOUR
+1 TITL UK, Navy Lists, 1888-1970
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2011
+2 PLAC Lehi, UT, USA
+1 _APID 1,2406::0
+1 REPO @R655981744@
+1 NOTE &lt;p&gt;&lt;i&gt;British Navy Lists&lt;/i&gt;. Marineschule Mürwick, Mürwik Flensburg, Germany.&lt;/p&gt;&lt;p&gt;&lt;i&gt;British Navy Lists&lt;/i&gt;. Peter Singlehurst&lt;/p&gt;&lt;p&gt;National Library of Scotland. British Navy Lists. Nationa
+2 CONC l Library of Scotland, 2020. https://doi.org/10.34812/y3wn-j486.&lt;/p&gt;
+0 @S768688065@ SOUR
+1 TITL 1841 England Census
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc
+2 DATE 2010
+2 PLAC Provo, UT, USA
+1 _APID 1,8978::0
+1 REPO @R655981744@
+1 NOTE &lt;i&gt;Census Returns of England and Wales, 1841&lt;/i&gt;. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1841. Data imaged from the National Archives, London, England. The National Archives gives no war
+2 CONC ranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the National Archives, Kew
+2 CONC , Richmond, Surrey TW9 4DU.
+0 @S768688066@ SOUR
+1 TITL Indian Army Quarterly List for 1 January 1912
+1 AUTH Graden, Debra, comp
+1 PUBL Ancestry.com Operations Inc
+2 DATE 2001
+2 PLAC Provo, UT, USA
+1 _APID 1,5758::0
+1 REPO @R655981744@
+1 NOTE Army Headquarters, India. &lt;i&gt;The Quarterly Indian Army List for January 1, 1912&lt;/i&gt;. Calcutta, India: Superintendent Government Printing, 1912.
+0 @S768688067@ SOUR
+1 TITL Colorado, U.S., Wills and Probate Records, 1875-1974
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2015
+2 PLAC Lehi, UT, USA
+1 _APID 1,8665::0
+1 REPO @R655981744@
+1 NOTE Colorado County, District and Probate Courts.
+0 @R655981744@ REPO
+1 NAME Ancestry.com
+0 TRLR
