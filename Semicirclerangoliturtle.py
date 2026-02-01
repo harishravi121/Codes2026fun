@@ -8,7 +8,7 @@ for k in range(4):
                 forward(120)
                 
                 for x in range(25):
-                        forward(10+random.randint(2,5))
+                        forward(10+random.randint(2,5)) #semicircle
                         left(10)
 
         for j in range(5):
