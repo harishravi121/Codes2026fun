@@ -1,3 +1,22 @@
+
+Will this brute force maze solver work
+
+...........................................
+
+Loop{
+
+Go forward turn random left or right at fork if dead end 180 turn and continue }
+
+.......................................
+
+So second order brute force and much better flood fill with paper notes is desire of Town..
+
+
+
+[12/21, 16:34] Dr Harish Exinc: So a coin toss coin is better than a compass based enhancement which I am looking for in Harry Potter 4..
+
+[12/21, 16:34] Dr Harish Exinc: A special maze coin left right
+
 [12/21, 15:13] Dr Harish Exinc: While flood fill is one algorithm for maze solver what's brute force algorithm to enter tri wizard cup? Let's try thats why I am not travelling much since 2006 and wanted to solve it
 
 [12/21, 15:16] Dr Harish Exinc: What if we built a garden maze to test scientists who know the algorithm with a compass
@@ -18,20 +37,3 @@
 
 
 
-Will this brute force maze solver work
-
-...........................................
-
-Loop{
-
-Go forward turn random left or right at fork if dead end 180 turn and continue }
-
-.......................................
-
-So second order brute force and much better flood fill with paper notes is desire of Town..
-
-
-
-[12/21, 16:34] Dr Harish Exinc: So a coin toss coin is better than a compass based enhancement which I am looking for in Harry Potter 4..
-
-[12/21, 16:34] Dr Harish Exinc: A special maze coin left right
