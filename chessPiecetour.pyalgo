@@ -1,0 +1,11 @@
+start=x1,y1
+moven=0
+
+while(xy!=x2y2)
+ choose random.randint(1,8) direction
+ move legally of random.randint(0,max)
+ moven+=1
+
+print(moven)
+
+#this could be queen rook or bishop knight or king too
