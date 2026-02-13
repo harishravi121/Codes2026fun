@@ -1,0 +1,8 @@
+to gemini: write a code to generate 100 random sentances on different areas in english stories
+to gemini : write a code to add 2 of random 10 above sentances and add a random number and call it seedstory generator
+
+
+while (1):
+
+  run seedstory generator
+  to gemini : write a story on the seed for 200 words and speak it..
