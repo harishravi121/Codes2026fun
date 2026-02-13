@@ -1,0 +1,5 @@
+while (1):
+  requ4st kiss
+  if(kiss):
+    give eclair
+  delay(2 hrs)
