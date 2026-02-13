@@ -9,3 +9,4 @@ while(xy!=x2y2)
 print(moven)
 
 #this could be queen rook or bishop knight or king too
+#put another for loop and measure mean and std dev
