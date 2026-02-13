@@ -1,4 +1,11 @@
 suppose we are given a 5 page way to solve a 3x3 cube
 how would you write a code to generate a random cube
 
-how would you generate the set of 50 moves to solve each time
+how would you generate the set of 50 moves to solve each time for 3x3
+
+how would you generate 800 moves for 5x5
+
+
+THe only thing I wrote was 2 move solution with proof for 1x1
+
+If you can write this in python you would be a good robotic level prof as being a prof is about typing solutions in tex
