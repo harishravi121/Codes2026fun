@@ -6,7 +6,16 @@ learning set of voltages and currents
 
 then 
 
-use camera input
-reach grab
-choose shelf
+use camera input choose coke and fanta
+reach grab coke
+choose coke shelf
+calculate ai path and currents and voltages
+
+#calculate ai path and currents and voltage (a better one would be recalculate with 10% NOVE)
 put 
+
+restart ai
+see reach fanta
+choose fant shelf
+calculate ai path and currents and voltage (a better one would be recalculate with 10% NOVE)
+put
