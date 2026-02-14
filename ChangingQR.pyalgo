@@ -1,0 +1,12 @@
+abc=htmllink
+qrcode activates abc
+
+sethtml={link1,linktovideo2,link3 ...etc}
+
+
+while(1):
+  abc=sethtml[random.randint(0,max(sethtml)]  #sekects a random link
+  delay(5 mins)
+
+
+this way different people see different links connected to same person and even same person sees different without manual expensive dynamic html I want automatic marketing and 
