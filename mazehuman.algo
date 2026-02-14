@@ -37,3 +37,21 @@ So second order brute force and much better flood fill with paper notes is desir
 
 
 
+-----------------
+
+
+For flood fill the code in app would be like
+
+while 1:
+  enter move direction
+  emter wall dead end or not 
+  see depth of flood fill and go to previous point
+  keep flooding till you go to destination
+  note least flood fill
+  repeatedly go from source to end of flood fill
+
+
+this needs an app
+
+
+
