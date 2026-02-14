@@ -9,7 +9,7 @@ Go forward turn random left or right at fork if dead end 180 turn and continue }
 
 .......................................
 
-Random left or right can be generated with exxisting apps of generate randomm nos min to max of 1,2
+Random left or right can be generated with exxisting apps of generate randomm nos min to max of 1,2 or even scientific calculator
 
 
 So second order brute force and much better flood fill with paper notes is desire of Town..
