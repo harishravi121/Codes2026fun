@@ -1,4 +1,5 @@
 Import random
+import gemini or chatgpt
 
 Draw a image showing random.randint(2,10) clocks and  random.randint(2,10) bit coins
 post on social media page
