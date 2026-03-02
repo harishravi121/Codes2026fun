@@ -1,9 +1,16 @@
 Import random
 import gemini or chatgpt
 
-Draw a image showing random.randint(2,10) clocks and  random.randint(2,10) bit coins
-post on social media page
+
+for i in range(5):
+
+  Draw a image showing random.randint(2,10) clocks and  random.randint(2,10) bit coins in random color and size
+  post on social media page
 
 
-Draw a image showing random.randint(2,10) atomic clocks and  random.randint(2,10) bit coins
-post on social media page
+  Draw a image showing random.randint(2,10) atomic clocks and  random.randint(2,10) bit coins in random color and size
+  post on social media page
+
+  delay(4 hrs)
+
+## THis is good even for owner team to see or save in computer
