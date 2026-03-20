@@ -1,0 +1,69 @@
+To create a 10-minute cricket game video using Gemini, you need to use the **Veo 3.1** model via the Gemini API. 
+
+However, there is a technical constraint: AI video models currently generate high-fidelity clips in short bursts (typically **8 seconds** per request). To reach a 10-minute duration, you must use a **video extension** strategy or a loop to generate a sequence of clips and then stitch them together.
+
+### Prerequisites
+1.  **API Key:** Get one from [Google AI Studio](https://aistudio.google.com/).
+2.  **Library:** Install the latest Google GenAI SDK.
+    ```bash
+    pip install -U google-genai
+    ```
+
+### Python Code: Sequential Cricket Scene Generation
+This script demonstrates how to programmatically generate a scene (like a batsman hitting a six) and provides the logic for extending it.
+
+```python
+import time
+from google import genai
+from google.genai import types
+
+client = genai.Client(api_key="YOUR_API_KEY")
+
+def generate_cricket_clip(prompt, output_name):
+    print(f"Generating: {prompt}...")
+    
+    # Using Veo 3.1 for cinematic quality with native audio
+    operation = client.models.generate_videos(
+        model="veo-3.1-generate-preview",
+        prompt=prompt,
+        config=types.GenerateVideosConfig(
+            aspect_ratio="16:9",
+            # Note: Clips are currently ~8 seconds. 
+            # You would loop this or use 'video_extension' for length.
+        ),
+    )
+
+    # Poll for completion
+    while not operation.done:
+        print("Waiting for the umpire's decision (video rendering)...")
+        time.sleep(15)
+        operation = client.operations.get(operation)
+
+    # Save the result
+    generated_video = operation.response.generated_videos[0]
+    generated_video.video.save(output_name)
+    print(f"Saved to {output_name}")
+
+# Example: Generating the opening shot
+generate_cricket_clip(
+    prompt="A cinematic wide shot of a packed cricket stadium under floodlights, "
+           "the bowler running in to bowl, realistic grass textures and crowd noise.",
+    output_name="cricket_intro.mp4"
+)
+```
+
+---
+
+### How to reach 10 minutes
+Since a single API call won't give you 10 minutes of continuous footage, you should follow this "Production Pipeline":
+
+1.  **Scripting (The Commentary):** Use **Gemini 3.1 Pro** to write a ball-by-ball script for a 10-minute segment (e.g., the final two overs of a T20 match).
+2.  **Clip Generation:** Use the code above in a loop to generate ~75 individual 8-second clips based on the script (e.g., "Bowler delivers a fast yorker," "Batsman plays a late cut," "Crowd cheering in slow motion").
+3.  **Video Extension:** For continuous action, use the `video_extension` feature in the API, which uses the last frame of a generated clip as the starting point for the next to ensure visual consistency.
+4.  **Audio Overlay:** Use **Lyria 3** via the API to generate a background score or "stadium atmosphere" tracks to layer over the video.
+5.  **Post-Processing:** Use a library like `moviepy` to concatenate the MP4 files into a single 10-minute masterpiece.
+
+### Important Technical Note
+Generating 10 minutes of AI video is **computationally expensive** and will quickly hit API rate limits on the free tier. I recommend starting with a "Match Highlights" version (approx. 60 seconds) to test your prompts before scaling up.
+
+**Would you like me to write the Python logic for stitching the videos together using MoviePy?**
