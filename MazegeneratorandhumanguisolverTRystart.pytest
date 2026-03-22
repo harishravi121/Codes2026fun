@@ -1,0 +1,89 @@
+#Need to integrate maze and gui
+
+import random
+
+def create_maze(dim):
+    # Initialize maze with walls (1)
+    maze = [[1] * dim for _ in range(dim)]
+    
+    def generate(x, y):
+        maze[y][x] = 0  # Mark current cell as path
+        
+        # Directions: Right, Down, Left, Up (moving 2 units at a time)
+        dirs = [(0, 2), (1, 0), (0, -2), (-1, 0)]
+        random.shuffle(dirs)
+        
+        for dx, dy in [(0, 2), (2, 0), (0, -2), (-2, 0)]:
+            nx, ny = x + dx, y + dy
+            if 0 <= nx < dim and 0 <= ny < dim and maze[ny][nx] == 1:
+                maze[y + dy//2][x + dx//2] = 0 # Remove wall between
+                generate(nx, ny)
+
+    generate(0, 0)
+    maze[dim-1][dim-1] = 0 # Ensure exit is open
+    return maze
+
+def solve_flood_fill(maze, x, y, exit_x, exit_y, visited):
+    # Base cases: out of bounds, wall, or already visited
+    if x < 0 or x >= len(maze) or y < 0 or y >= len(maze) or \
+       maze[y][x] == 1 or (x, y) in visited:
+        return False
+
+    visited.add((x, y))
+
+    # Check if we reached the exit
+    if x == exit_x and y == exit_y:
+        return True
+
+    # Explore neighbors (Right, Down, Left, Up)
+    for dx, dy in [(0, 1), (1, 0), (0, -1), (-1, 0)]:
+        if solve_flood_fill(maze, x + dx, y + dy, exit_x, exit_y, visited):
+            maze[y][x] = 2  # Mark the correct path with '2'
+            return True
+            
+    return False
+
+# Execution
+size = 11  # Use odd numbers for best generation results
+maze = create_maze(size)
+solve_flood_fill(maze, 0, 0, size-1, size-1, set())
+
+# Print the result
+for row in maze:
+    print(" ".join(str(cell) for cell in row))
+
+
+-------------------------------
+
+#Graphical user interface
+import tkinter as tk
+import random
+
+def show_random_number():
+    # Generate a random integer between 1 and 100
+    num = random.randint(['left','right','straight','back')
+    # Update the label text
+    result_label.config(text=f"Result: {num}")
+
+# Initialize the main window
+root = tk.Tk()
+root.title("Random Number Generator")
+root.geometry("300x250")
+
+# The functional button
+btn_main = tk.Button(root, text="Click for Random Number", command=show_random_number, bg="#4CAF50", fg="white")
+btn_main.pack(pady=10)
+
+# The display label
+result_label = tk.Label(root, text="Result: --", font=("Arial", 14))
+result_label.pack(pady=10)
+
+# The 3 Dummy Buttons
+for i in range(1, 4):
+    dummy_btn = tk.Button(root, text=f"Dummy Button {i}", state="disabled")
+    dummy_btn.pack(pady=5)
+
+# Start the application
+root.mainloop()
+
+
