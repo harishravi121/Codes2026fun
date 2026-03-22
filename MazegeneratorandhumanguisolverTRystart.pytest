@@ -83,6 +83,90 @@ for i in range(1, 4):
     dummy_btn = tk.Button(root, text=f"Dummy Button {i}", state="disabled")
     dummy_btn.pack(pady=5)
 
+
+-----
+
+Here is gemini sum of 2 codes
+
+import tkinter as tk
+import random
+import time
+
+class MazeApp:
+    def __init__(self, root, size=21):
+        self.root = root
+        self.root.title("Pro-Grade Maze Solver")
+        self.size = size
+        self.cell_size = 25
+        self.canvas = tk.Canvas(root, width=size*self.cell_size, height=size*self.cell_size, bg="black")
+        self.canvas.pack(padx=10, pady=10)
+        
+        # 1 = Wall, 0 = Path
+        self.maze = [[1] * size for _ in range(size)]
+        self.visited = set()
+        
+        # UI Buttons
+        self.btn_frame = tk.Frame(root)
+        self.btn_frame.pack(fill="x")
+        tk.Button(self.btn_frame, text="Generate & Solve", command=self.start_process).pack(side="left", padx=20)
+        
+        self.generate_maze(1, 1)
+        self.draw_maze()
+
+    def generate_maze(self, x, y):
+        self.maze[y][x] = 0
+        dirs = [(0, 2), (2, 0), (0, -2), (-2, 0)]
+        random.shuffle(dirs)
+        for dx, dy in dirs:
+            nx, ny = x + dx, y + dy
+            if 0 < nx < self.size-1 and 0 < ny < self.size-1 and self.maze[ny][nx] == 1:
+                self.maze[y + dy//2][x + dx//2] = 0
+                self.generate_maze(nx, ny)
+
+    def draw_maze(self):
+        self.canvas.delete("all")
+        for y in range(self.size):
+            for x in range(self.size):
+                color = "white" if self.maze[y][x] == 0 else "#2c3e50"
+                self.canvas.create_rectangle(x*self.cell_size, y*self.cell_size, 
+                                           (x+1)*self.cell_size, (y+1)*self.cell_size, 
+                                           fill=color, outline="#34495e")
+
+    def start_process(self):
+        # Reset and solve
+        self.visited = set()
+        self.draw_maze()
+        self.solve(1, 1)
+
+    def solve(self, x, y):
+        # The "Flood Fill" with Animation
+        if (x, y) == (self.size-2, self.size-2): return True
+        if (x, y) in self.visited or self.maze[y][x] == 1: return False
+        
+        self.visited.add((x, y))
+        
+        # Visual "Exploring" Color
+        rect = self.canvas.create_rectangle(x*self.cell_size, y*self.cell_size, 
+                                           (x+1)*self.cell_size, (y+1)*self.cell_size, 
+                                           fill="#e74c3c", outline="")
+        self.root.update()
+        time.sleep(0.02) # Control animation speed
+
+        for dx, dy in [(0, 1), (1, 0), (0, -1), (-1, 0)]:
+            if self.solve(x + dx, y + dy):
+                # Visual "Correct Path" Color
+                self.canvas.itemconfig(rect, fill="#2ecc71")
+                return True
+        
+        # Backtracking Color
+        self.canvas.itemconfig(rect, fill="#95a5a6")
+        return False
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = MazeApp(root)
+    root.mainloop()
+
 # Start the application
 root.mainloop()
 
