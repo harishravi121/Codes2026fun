@@ -1,7 +1,12 @@
+//finallap to riches and I don't how to code this to cheapest phones for job loss safety to go back up the ladder or have an adventure at high speed with an unbreakable device for 1 week charge
 import javax.microedition.midlet.*;
 import javax.microedition.lcdui.*;
 import java.util.Random;
-//made with gemini not tested on real phone
+
+
+//made with gemini not tested on real phone this is for 10$ phones..
+
+
 public class RandomStringMIDlet extends MIDlet implements CommandListener {
     private Display display;
     private Form mainForm;
