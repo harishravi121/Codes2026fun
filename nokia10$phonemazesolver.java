@@ -1,4 +1,4 @@
-//finallap to riches and I don't how to code this to cheapest phones for job loss safety to go back up the ladder or have an adventure at high speed with an unbreakable device for 1 week charge
+//finallap to riches and I don't how to code this to cheapest phones for Old times childhood dream job loss safety to go back up the ladder or have an adventure at high speed with an unbreakable device for 1 week charge
 import javax.microedition.midlet.*;
 import javax.microedition.lcdui.*;
 import java.util.Random;
