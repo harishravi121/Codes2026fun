@@ -1,4 +1,4 @@
- #write a python gui to display a random no on button click and show 3 more dummy buttons how to embed flood fill by asking gemini or seeing git hub codes for floodfill humanization
+ #write a python gui to display a random no on button click and show 3 more dummy buttons how to embed flood fill by asking gemini or seeing git hub codes made for robotic maze solver for floodfill humanization
 
 import tkinter as tk
 import random
