@@ -9,3 +9,5 @@ The best online family geneology tree is ancestry.com
 I really like concicous robots as shown and  ai concious sport game video maker for a channel for money so no one has to spend lakhs to go to a game and 100 crore to host it the use being we will be fit watching it and excercising..
 
 Random maps written for android but would be nice for <10$ androidless phones? Also flood fill protype with lift heavy laptop android gui with just 3 buttons would be nice and I saw IITM do python guis
+
+So I would like to ask my BTP Labmates to help write a union of maze solver robot code and human entry algorithm to get new gui in python.. since 2010
