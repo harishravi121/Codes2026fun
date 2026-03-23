@@ -3,7 +3,7 @@ import javax.microedition.midlet.*;
 import javax.microedition.lcdui.*;
 import java.util.Random;
 
-
+//Smartphones like android and iphone are expensive so this is true opportunity mappying in 10 $ phones
 //made with gemini not tested on real phone this is for 10$ phones..
 
 
