@@ -1,6 +1,8 @@
 #include <Wire.h> 
 #include <LiquidCrystal_I2C.h>
 //A odometer button feature for car for simple navigation start flood fill needs a field of 4 and not coded by me yet
+
+//The joke is scooty pep costs 30 k Re so why buy cheap phone for 30 k for navigation if you can code into odometer
 // Set the LCD address to 0x27 for a 16 chars and 2 line display
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
