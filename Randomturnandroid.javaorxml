@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/directionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Press the button!"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="40dp" />
+
+    <Button
+        android:id="@+id/randomBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Random Turn"
+        android:padding="16dp" />
+
+</LinearLayout>
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import kotlin.random.Random
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Initialize UI components
+        val directionText = findViewById<TextView>(R.id.directionText)
+        val randomBtn = findViewById<Button>(R.id.randomBtn)
+
+        // List of possible directions
+        val directions = listOf("Turn Left ⬅️", "Turn Right ➡️", "Go Straight ⬆️", "U-Turn ↩️")
+
+        randomBtn.setOnClickListener {
+            // Pick a random index from the list
+            val randomIndex = Random.nextInt(directions.size)
+            
+            // Update the display
+            directionText.text = directions[randomIndex]
+        }
+    }
+}
