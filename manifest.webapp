@@ -1,0 +1,13 @@
+{
+  "name": "DirectionPicker",
+  "description": "A simple app to get a random direction from Button 5.",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/img/icon-128.png"
+  },
+  "developer": {
+    "name": "Your Name",
+    "url": "http://example.com"
+  },
+  "default_locale": "en"
+}
