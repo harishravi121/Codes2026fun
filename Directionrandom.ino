@@ -1,5 +1,5 @@
 /*
-Code by Dr. Harish with LCD shield to navigate maze a stand alone device
+Code by Dr. Harish with LCD shield to navigate maze a stand alone device we can do origanomic openeing of maze to 100x100 even in a 4x8 lcd for floodfill
 */
 
 // include the library code:
