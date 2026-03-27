@@ -1,5 +1,5 @@
 /*
-Code by Dr. Harish with LCD shield to navigate maze a stand alone device we can do origanomic openeing of maze to 100x100 even in a 4x8 lcd for floodfill
+Code by Dr. Harish with LCD shield to navigate maze a stand alone device we can do origanomic openeing of maze to 100x100 even in a 4x8 lcd for floodfill if you don't want flood fill you can even make it with one single seven segment display but it still needs arduino to generate random nos
 */
 
 // include the library code:
