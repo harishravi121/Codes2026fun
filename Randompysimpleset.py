@@ -8,7 +8,7 @@ while 1:
 
 
 
-\\Next we have to update a matrix based on conditionals on a 
+#Next we have to update a matrix based on conditionals on input a 
 
 Floodfillmatrix=np.zeros(100,100)
 
