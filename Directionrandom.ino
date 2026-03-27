@@ -1,5 +1,5 @@
 /*
-Code by Dr. Harish with LCD shield 
+Code by Dr. Harish with LCD shield to navigate maze a stand alone device
 */
 
 // include the library code:
