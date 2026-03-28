@@ -1,0 +1,34 @@
+/*
+Code by Dr. Harish with LCD shield to navigate maze a stand alone device we can do origanomic openeing of maze to 100x100 even in a 4x8 lcd for floodfill if you don't want flood fill you can even make it with one single seven segment display but it still needs arduino to generate random nos
+*/
+
+// include the library code:
+#include <sevensegment.h>
+
+
+
+void setup() {
+
+}
+
+void loop() {
+lcd.setCursor(0, 0);
+  int a;
+   a=int(random(4));
+  if(a==0){
+  lcd.print("sevensegment('L")");}
+  if(a==1){
+    lcd.print("evensegment('R") ");
+  }
+
+   if(a==2){
+    evensegment('F")
+  }
+
+   if(a==3){
+    levensegment('B")
+  }
+
+  delay(1000+random(1000));
+  
+}
