@@ -16,7 +16,7 @@ LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 void setup() {
   // set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
-  
+  float c=3e8;
   lcd.setCursor(0, 0);
   lcd.print("Measuring c/10^8 in m/s  ");}
   lcd.setCursor(1,0);
@@ -25,8 +25,8 @@ void setup() {
 }
 
 void loop() {
-   float c;
-   L=10km;
+   float c2;
+   L=10km;//fibrespool
   Loopnumberaim=10000;
   ontime=1; //ms
   timedelay=L*Loopnumberaim/c*1000;
@@ -40,8 +40,8 @@ void loop() {
   digitalwrite(GAPDpin,HIGH);
   delay(1);
   if(GAPDsignal==1){
-  c=L*Loopnumberaim/1000/timedelay
-  lcd.Print(c)
+  c2=L*Loopnumberaim/1000/timedelay
+  lcd.Print(c2)
     }
 
 
