@@ -36,12 +36,13 @@ void loop() {
   digitalwrite(LEDpin,HIGH);
   delay(ontime);
   digitalwrite(LEDpin,LOW);
-  delay(1000);
+  delay(timedelay);
   digitalwrite(GAPDpin,HIGH);
   delay(1);
   if(GAPDsignal==1){
-  c=L*Loopnumberaim/
-  lcd.Print(
+  c=L*Loopnumberaim/1000/timedelay
+  lcd.Print(c)
+    }
 
 
 
